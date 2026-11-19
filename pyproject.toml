@@ -1,0 +1,30 @@
+ [build-system]
+ requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+
+ [project]
+ name = "hash-chemistry"
+ version = "0.1.0"
+ description = "JAX and C implementations of Structural Cellular Hash Chemistry"
+ readme = "README.md"
+ requires-python = ">=3.10"
+ dependencies = [
+     "jax>=0.4.23",
+     "matplotlib>=3.8",
+ ]
+ authors = [
+     { name = "Ilya Horiguchi" },
+     { name = "Hiroki Sayama" },
+ ]
+
+ [project.optional-dependencies]
+ dev = ["ruff>=0.6.9"]
+ # packages needed by the scripts that produce the figures and tables
+ paper = ["pandas>=1.5", "scipy>=1.9", "seaborn>=0.12"]
+
+ [tool.setuptools]
+ packages = ["hash_chemistry"]
+ package-dir = { hash_chemistry = "src" }
+
+ [tool.setuptools.package-data]
+ hash_chemistry = ["schc_fast.c"]

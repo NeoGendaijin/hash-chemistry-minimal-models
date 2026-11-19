@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+build/
+*.egg-info/
+# compiled C implementation (built on first use)
+src/_schc_fast*.so
+# simulation outputs and derived results come from the data archive
+/results/
